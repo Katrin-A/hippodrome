@@ -2,11 +2,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullSource;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -18,7 +16,7 @@ class HippodromeTest {
     @ParameterizedTest
     @NullSource
     @DisplayName("When null passed to constructor then throw exception with valid error message")
-    void whenNullPassedToConstructorThenThrowExceptionWithValidErrorMessage(List horses) {
+    void whenNullPassedToConstructorThenThrowExceptionWithValidErrorMessage(List<Horse> horses) {
         String expectedErrorMessage = "Horses cannot be null.";
 
         IllegalArgumentException exception = assertThrows(
